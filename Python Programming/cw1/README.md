@@ -2,6 +2,5 @@
 
 ### Introduction
 
-This repository contains the skeleton code that you need 
-in order to complete the coursework.
+Run `main.py` and choose the mode to play the game.
 
