@@ -1,0 +1,524 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{textcomp}
+\usepackage{amstext}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\makeatletter
+\providecommand{\tabularnewline}{\\}
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+
+\usepackage{amssymb, comment}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{latexsym}
+\usepackage{epsfig}
+\usepackage{hyperref}
+\usepackage[ruled,vlined]{algorithm2e}
+\setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-0.4in}
+\setlength{\textheight}{8.5in}
+\usepackage{fourier-orns}
+
+\textwidth=6in
+\oddsidemargin=0.25in
+\evensidemargin=0.25in
+\topmargin=-0.1in
+\footskip=0.8in
+\parindent=0.0cm
+\parskip=0.3cm
+\textheight=8.00in
+\setcounter{tocdepth} {3}
+\setcounter{secnumdepth} {2}
+\sloppy
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{answer}{\bf Answer}
+\newtheorem{exercise}{\bf Exercise}
+\newtheorem{example}{Example}[section]
+
+\newcommand{\N}{\mathbb N} % natural numbers 0,1,2,...
+\newcommand{\Z}{\mathbb Z}  % integers
+\newcommand{\R}{\mathbb R} % reals
+\newcommand{\C}{\mathbb C} % complex numbers
+\newcommand{\F}{\mathbb F} % finite fields
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\norm}[2]{\|#1\|_{#2}}
+\newcommand{\Conv}{{\bf Conv}}
+
+\newcommand{\floor}[1]{\left\lfloor {#1} \right\rfloor} % floor function
+\newcommand{\ceiling}[1]{\left\lceil {#1} \right\rceil} % ceiling function
+\newcommand{\binomial}[2]{\left( \begin{array}{c} {#1} \\ 
+                        {#2} \end{array} \right)} % binomial coefficients
+\newcommand{\modulo}[1]{ (\mbox{mod }{#1})} %congruences
+%\newcommand{\modulo}[1]{\quad (\mbox{mod }{#1})} %congruences
+\usepackage{enumerate}
+
+\newcommand{\ignore}[1]{} % useful for commenting things out 1 ignores, 0 puts it there 
+
+\makeatother
+\usepackage{subfigure}
+
+\title{
+\texttt{70007}: Computational Optimisation \\
+Coursework 1}
+\author{Author: Ding Ke (\textbf{kd120})}
+\date{
+\begin{tabular}{ll}
+CATE Disclosure Date: & 18:00 22-01-2021 \\
+Due on CATE: & 19:00 12-02-2021
+\end{tabular}
+}
+
+\begin{document}
+\maketitle
+
+\section{Part 1}
+\subsection{}
+\textit{Prove Log-Sum-Exp $\left( \log \sum\limits_{k = 1}^{10} \exp \left( B_{j \, k} \right) \right)$ is convex.}
+
+\medskip
+The strategy for the proof is using the second derivative \textbf{sufficient} condition for convex functions: that is if the Hessian is proved to be always positive semi-definite on $\R^n$, then the function is said to be convex.
+
+\medskip
+Let the function of interest be denoted as $f(\vect{B}) = \log \sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)$, so that now the Hessian can be expressed as:
+\begin{align*}
+            H(\vect{B}) &= \nabla^2f(\vect{B})\\
+                        &= \frac{\partial^2}{\partial B_{p}B_{q}}f(\vect{B})
+\end{align*}
+Where indices of Hessian matrix are \begin{math}
+  \left\{
+    \begin{array}{l}
+      p = 1...10\\
+      q = 1...10
+    \end{array}
+  \right.
+\end{math},  and Hessian matrix $H(\vect{B}) \in \R^{p \times q}$.
+
+\medskip
+Write the problem as $\frac{\partial}{\partial B_{p}}\frac{\partial\log \sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{q}}$ and deal with the first derivative part $\frac{\partial\log \sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{q}}$ first, using chain rule:
+\begin{align}
+            f' &= \frac{\partial}{\partial B_{q}}\log \sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\\
+                        &= \left(\frac{1}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}\right)\cdot\left(\frac{\partial\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{q}}\right)
+\end{align}
+One can observe that $\frac{\partial\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{q}} = $ \begin{math}
+    \left\{
+    \begin{array}{ll}
+      \exp \left( B_{q} \right) & \mbox{when k = q} \\
+      0 & otherwise
+    \end{array}
+    \right.
+    \end{math}, therefore equation (1.2) becomes:
+\begin{align}
+            \frac{\partial}{\partial B_{q}}\log \sum\limits_{k = 1}^{10} \exp \left( B_{k} \right) &= \left(\frac{1}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}\right)\cdot\exp \left( B_{q} \right)
+\end{align}
+Now elements of the Hessian can be expressed with the index notation:
+\begin{align}
+H_{p\,q} &= \frac{\partial}{\partial B_{p}}\left(\left(\frac{1}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}\right)\cdot\exp \left( B_{q} \right)\right)
+\end{align}
+
+\medskip
+To continue with the second derivative computation of Hessian, there are two separate cases of consideration: (1) when $p = q$, i.e. all elements along the matrix diagonal; (2) when $p \neq q$, i.e. all the other elements.
+
+\medskip
+For the diagonal scenario($p = q$), equation (1.4) becomes:
+\begin{align}
+H_{p\,p} &= \frac{\partial}{\partial B_{p}}\left(\left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^{-1}\cdot\exp \left( B_{p} \right)\right)
+\end{align}
+And by product rule:
+\begin{align}
+H_{p\,p} &= -\left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^{-2}\cdot\left(\frac{\partial\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{p}}\right)\cdot\exp \left( B_{p} \right) + \left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^{-1}\cdot\left(\frac{\partial \exp \left( B_{p} \right)}{\partial B_{p}}\right)
+\end{align}
+Observe that $\frac{\partial\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{p}} = $ \begin{math}
+    \left\{
+    \begin{array}{ll}
+      \exp \left( B_{p} \right) & \mbox{when k = p} \\
+      0 & otherwise
+    \end{array}
+    \right.
+    \end{math}, and $\frac{\partial \exp \left( B_{p} \right)}{\partial B_{p}} = \exp \left( B_{p} \right)$, therefore equation (1.6) becomes:
+\begin{align}
+H_{p\,p} &= \left(\frac{1}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}\right)\cdot\exp \left( B_{p} \right) - \left(\frac{1}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}\right)^2\cdot\exp \left( 2B_{p} \right)
+\end{align}
+
+\medskip
+Next for the scenario where $p \neq q$, compute from equation (1.4), again using product rule:
+\begin{align}
+H_{p\,q} &= \left(\frac{1}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}\right)\cdot\left(\frac{\partial \exp \left( B_{q} \right)}{\partial B_{p}}\right) + \left(-\left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^{-2}\cdot\left(\frac{\partial\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{p}}\right)\cdot\exp \left( B_{q} \right)\right)
+\end{align}
+Observe that $\frac{\partial \exp \left( B_{q} \right)}{\partial B_{p}} = 0$, and from previous result of $\frac{\partial\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}{\partial B_{p}} = \exp(B_{p})$  therefore equation (1.8) becomes:
+\begin{align}
+H_{p\,q} &= -\left(\frac{1}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)}\right)^{2}\cdot\exp \left( B_{p} \right)\cdot\exp \left( B_{q} \right)
+\end{align}
+
+\medskip
+Now, from both equation (1.7) and (1.9), the Hessian can be fully expanded as:
+$$ H(\vect{B}) = 
+\begin{bmatrix} 
+\frac{\exp \left( B_{1} \right)}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)} - \frac{\exp \left( 2B_{1} \right)}{\left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^2}& \cdots & -\frac{\exp \left( B_{1} \right)\exp \left( B_{10} \right)}{\left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^2} \\
+\cdots & \cdots & \cdots\\
+-\frac{\exp \left( B_{10} \right)\exp \left( B_{1} \right)}{\left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^2} & \cdots & \frac{\exp \left( B_{10} \right)}{\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)} - \frac{\exp \left( 2B_{10} \right)}{\left(\sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)\right)^2} \\
+\end{bmatrix}
+\quad
+$$
+
+\medskip
+Let a vector $\vect{z} \in \R^{10 \times 1}$ be defined as $\vect{z} = \left[\exp(B_{1}), \exp(B_{2}), \exp(B_{3}), \cdots, \exp(B_{10})\right]^{T}$, thus $1^{T}\vect{z} = \sum\limits_{k = 1}^{10} \exp \left( B_{k} \right)$. Observing carefully the above matrix structure, one can quickly notice that the Hessian $ H(\vect{B})$ can be expressed in matrix notation as:
+\begin{align}
+H(\vect{B}) &= \frac{1}{1^{T}\vect{z}}diag(\vect{z}) - \frac{1}{\left(1^{T}\vect{z}\right)^2}\vect{z}\vect{z}^{T}
+\end{align}
+Where the \texttt{diag()} function maps elements of a vector into the diagonal of a matrix(corresponding to the size of the vector). 
+
+\medskip
+To see if the Hessian is p.s.d., one need to show that $\vect{v}^{T}H(\vect{B})\vect{v} \geq 0$, for all $\vect{v}$:
+\begin{align}
+\vect{v}^{T}H(\vect{B})\vect{v} &= \frac{1}{1^{T}\vect{z}}\vect{v}^{T}diag(\vect{z})\vect{v} - \frac{1}{\left(1^{T}\vect{z}\right)^2}\vect{v}^{T}\vect{z}\vect{z}^{T}\vect{v} \\
+&= \frac{1^{T}\vect{z}}{\left(1^{T}\vect{z}\right)^2}\vect{v}^{T}diag(\vect{z})\vect{v} - \frac{1}{\left(1^{T}\vect{z}\right)^2}\left(\vect{z}^{T}\vect{v}\right)^{T}\left(\vect{z}^{T}\vect{v}\right) \\
+&= \frac{\left(1^{T}\vect{z}\right)\vect{v}^{T}diag(\vect{z})\vect{v} - \left(\vect{z}^{T}\vect{v}\right)^{T}\left(\vect{z}^{T}\vect{v}\right)}{\left(1^{T}\vect{z}\right)^2}
+\end{align}
+
+\medskip
+Now focusing on the $\left(\vect{z}^{T}\vect{v}\right)^{T}\left(\vect{z}^{T}\vect{v}\right)$ term of equation (1.13), use Cauchy-Schwarz inequality for $\langle \vect{z}^{T}\vect{v}, \vect{z}^{T}\vect{v}\rangle$:
+\begin{align}
+\left(\vect{z}^{T}\vect{v}\right)^{T}\left(\vect{z}^{T}\vect{v}\right) &\leq \norm{\vect{z}^{T}\vect{v}}{2}\norm{\vect{z}^{T}\vect{v}}{2}
+\end{align}
+And by the definition of L2 norm, also realising $\vect{z}^{T}\vect{v} = \sum\limits_{k = 1}^{10}z_{k}v_{k}$ is a real value where $z_{k} = exp(B_{k})$:
+\begin{align}
+\left(\vect{z}^{T}\vect{v}\right)^{T}\left(\vect{z}^{T}\vect{v}\right) &\leq \sqrt{\sum\limits_{k = 1}^{10}\left(z_{k}v_{k}\right)^{2}}\sqrt{\sum\limits_{k = 1}^{10}\left(z_{k}v_{k}\right)^{2}} \\
+\left(\vect{z}^{T}\vect{v}\right)^{T}\left(\vect{z}^{T}\vect{v}\right) &\leq \sum\limits_{k = 1}^{10}\left(z_{k}v_{k}\right)^{2} \\
+\left(\vect{z}^{T}\vect{v}\right)^{T}\left(\vect{z}^{T}\vect{v}\right) &\leq \sum\limits_{k = 1}^{10}z_{k}\sum\limits_{k = 1}^{10}z_{k}v_{k}^{2}
+\end{align}
+
+\medskip
+Writing everything in equation (1.13) and (1.17) in index notation, equation (1.13) becomes:
+\begin{align}
+\vect{v}^{T}H(\vect{B})\vect{v} &= \frac{\left(\sum\limits_{k = 1}^{10}z_{k}\right)\left(\sum\limits_{k = 1}^{10}z_{k}v_{k}^{2}\right) - \left(\sum\limits_{k = 1}^{10}z_{k}v_{k}\right)\left(\sum\limits_{k = 1}^{10}z_{k}v_{k}\right)}{\left(\sum\limits_{k = 1}^{10}z_{k}\right)^{2}}
+\end{align}
+And equation (1.17) in full index notation:
+\begin{align}
+\left(\sum\limits_{k = 1}^{10}z_{k}v_{k}\right)\left(\sum\limits_{k = 1}^{10}z_{k}v_{k}\right) &\leq \left(\sum\limits_{k = 1}^{10}z_{k}\right)\left(\sum\limits_{k = 1}^{10}z_{k}v_{k}^{2}\right)
+\end{align}
+
+\medskip
+Substituting equation (1.19) into (1.18) shows that $\vect{v}^{T}H(\vect{B})\vect{v} \geq 0$ for any $\vect{v}$, therefore the Hessian $H(\vect{B})$ is p.s.d. everywhere on $\R^{n}$, therefore the \texttt{Log-Sum-Exp} function is convex.
+
+\subsection{}
+\textit{Prove composition of a convex function with an affine mapping $\left( \log \sum\limits_{k = 1}^{10} \exp \left( \vect{x_i}^{\top} \vect{\beta_k} \right) \right)$ is convex.}
+
+\medskip
+The strategy for the proof is using the definition of convex functions.
+
+\medskip
+The composition of \texttt{Log-Sum-Exp} function $f(\vect{B})$ with an affine mapping can be expressed as a new function $g(\vect{B}) = f(\vect{x}^{T}\vect{B})$, the goal is prove $g(\vect{B})$ to be convex, given that convexity of \texttt{Log-Sum-Exp} function $f(\vect{B})$ has been proven in the previous section.
+
+\medskip
+First try to create a linear combination structure for $g(\vect{B})$, let $\vect{B} = \alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}$, where $\forall \alpha \in (0, 1)$. And now by definition of $g(\vect{B})$:
+\begin{align}
+g\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right)&= f\left(\vect{x}^{T}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right)\right) \\
+&= f\left(\alpha\left(\vect{x}^{T}\vect{B}_{1}\right) + \left(1 - \alpha\right)\left(\vect{x}^{T}\vect{B}_{2}\right)\right)
+\end{align}
+Note that the $\alpha$ term is just a real-valued coefficient, so it can be moved around and outside the brackets. 
+
+\medskip
+To prove the convexity of $f(\vect{x}^{T}\vect{B})$ given convexity of $f(\vect{B})$, first by definition of convexity of \texttt{Log-Sum-Exp} function $f(\vect{B})$:
+\begin{align}
+f\left(\alpha \vect{B}_{1} + (1 - \alpha )\vect{B}_{2} \right) &\leq \alpha f \left(\vect{B}_{1}\right) + \left(1 - \alpha\right) f \left(\vect{B}_{2}\right)
+\end{align}
+From the above equation, and by definition of the affine mapping $\vect{x}$:
+\begin{align}
+\vect{x}^{T} f\left(\alpha \vect{B}_{1} + (1 - \alpha )\vect{B}_{2} \right) &\leq \alpha \vect{x}^{T} f \left(\vect{B}_{1}\right) + \left(1 - \alpha\right) \vect{x}^{T} f \left(\vect{B}_{2}\right) \\
+f\left(\alpha\left(\vect{x}^{T}\vect{B}_{1}\right) + \left(1 - \alpha\right)\left(\vect{x}^{T}\vect{B}_{2}\right)\right) &\leq \alpha f \left(\vect{x}^{T}\vect{B}_{1}\right) + \left(1 - \alpha\right) f \left(\vect{x}^{T}\vect{B}_{2}\right)
+\end{align}
+Thus the above inequality confirms the convexity of $f(\vect{x}^{T}\vect{B})$, and by definition of function $g(\vect{B})$ again:
+%
+\[\Scale[0.85]{g\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) = f\left(\alpha\left(\vect{x}^{T}\vect{B}_{1}\right) + \left(1 - \alpha\right)\left(\vect{x}^{T}\vect{B}_{2}\right)\right) \leq \alpha f \left(\vect{x}^{T}\vect{B}_{1}\right) + \left(1 - \alpha\right) f \left(\vect{x}^{T}\vect{B}_{2}\right) = \alpha g\left(\vect{B}_{1}\right) + (1 - \alpha )g\left(\vect{B}_{2}\right)}\] 
+%
+
+The above inequality is the exactly the definition of convexity for $g(\vect{B})$, therefore $g(\vect{B})$ as an composition of the convex $f(\vect{B})$ with an affine mapping is also convex.
+
+\subsection{}
+\textit{Prove affine functions $\left( - \vect{x_i}^{\top} \vect{\beta_{y_i + 1}} \right)$ are convex.}
+
+\medskip
+The strategy for the proof is also using the definition of convex function.
+
+\medskip
+The affine function of interest can be expressed as $f(\vect{B}) = - \vect{x}^{T}\vect{B}$. Now as before, to create a linear combination structure, let $\vect{B} = \alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}, \forall \alpha \in (0, 1)$, and by definition of $f(\vect{B})$:
+\begin{align}
+f\left(\alpha \vect{B}_{1} + (1 - \alpha )\vect{B}_{2} \right) &= - \vect{x}^{T}\left(\alpha \vect{B}_{1} + (1 - \alpha )\vect{B}_{2}\right) \\
+&= \alpha \left(- \vect{x}^{T}\vect{B}_{1}\right) + (1 - \alpha)\left(- \vect{x}^{T}\vect{B}_{2}\right) \\
+&= \alpha f(\vect{B}_{1}) + (1 - \alpha)f(\vect{B}_{2})
+\end{align}
+The above equation shows that affine function $f(\vect{B})$ is both convex and concave, therefore the affine function is convex.
+
+\subsection{}
+\textit{Prove that $\ell_1$ Regularisation $\norm{\vect{\beta_k}}{1}$ is convex.}
+
+\medskip
+The strategy of the proof is using definition of convex function through the triangular inequality.
+
+\medskip
+First prove the triangular inequality holds for L1 norm like $\norm{\vect{B}}{1}$, taking square of L1 norm, assuming $\langle,\rangle$ is the inner product between two vectors and it is symmetric:
+\begin{align}
+\norm{\vect{A} + \vect{B}}{1}^{2} &= \langle \vect{A} + \vect{B}, \vect{A} + \vect{B} \rangle \\
+&= \langle \vect{A}, \vect{A} \rangle + \langle \vect{B}, \vect{B} \rangle + 2\langle \vect{A},\vect{B} \rangle \\
+&= \norm{\vect{A}}{1}^{2} + \norm{\vect{B}}{1}^{2} + 2\langle \vect{A},\vect{B} \rangle
+\end{align}
+Now use Cauchy-Schwarz inequality on $\langle \vect{A},\vect{B} \rangle$:
+\begin{align}
+\norm{\vect{A} + \vect{B}}{1}^{2} = \norm{\vect{A}}{1}^{2} + \norm{\vect{B}}{1}^{2} + 2\langle \vect{A},\vect{B} \rangle &\leq \norm{\vect{A}}{1}^{2} + \norm{\vect{B}}{1}^{2} + 2\norm{\vect{A}}{1}\norm{\vect{B}}{1} \\
+\norm{\vect{A} + \vect{B}}{1}^{2} &\leq \left( \norm{\vect{A}}{1} + \norm{\vect{B}}{1} \right)^{2} \\
+\norm{\vect{A} + \vect{B}}{1} &\leq \norm{\vect{A}}{1} + \norm{\vect{B}}{1}
+\end{align}
+
+\medskip
+Now, creating a linear combination structure $\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right)$) in the L1-norm and one can exploit the above proven triangular inequality, let $\vect{A} = \alpha \vect{B}_{1}$ and $ \vect{B} = (1 - \alpha)\vect{B}_{2}$, $\forall \alpha \in (0, 1)$:
+\begin{align}
+\norm{\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}}{1} &\leq \norm{\alpha\vect{B}_{1}}{1} + \norm{(1 - \alpha)\vect{B}_{2}}{1} \\
+\norm{\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}}{1} &\leq \alpha\norm{\vect{B}_{1}}{1} + (1 - \alpha)\norm{\vect{B}_{2}}{1}
+\end{align}
+The above inequality is the exact definition of convexity for L1-norm $\norm{\cdot}{1}$, therefore the $\ell_1$ Regularisation is convex.
+
+\subsection{}
+\textit{Prove that the entire optimisation problem is convex.}
+
+\medskip
+The strategy of proof is decomposing the problem into sub-parts and using the definition of convex function where necessary.
+
+\medskip
+The problem $\min\limits_{\vect{\beta_1}, \, \ldots, \, \vect{\beta_{10}}} \; g(\vect{B}) + h(\vect{B}) = \min\limits_{\vect{\beta_1}, \, \ldots, \, \vect{\beta_{10}}} \; \sum\limits_{i = 1}^m \left( \log \sum\limits_{k = 1}^{10} \exp \left( \vect{x_i}^{\top} \vect{\beta_k} \right) - \vect{x_i}^{\top} \vect{\beta_{y_i + 1}} \right) + \lambda \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{1}$ can be broken up into the following parts: (1) let $g_{1}(\vect{B}) = \left( \log \sum\limits_{k = 1}^{10} \exp \left( \vect{x_i}^{\top} \vect{\beta_k} \right) - \vect{x_i}^{\top} \vect{\beta_{y_i + 1}} \right)$; (2) let $h_{1}(\vect{B}) = \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{1}$. We first deal with the $g_{1}(\vect{B})$ part first, recognising immediately that $g_{1}(\vect{B}) = g_{2}(\vect{B}) + g_{3}(\vect{B})$ where $g_{2}(\vect{B})$ is the \texttt{log-sum-exp} whose convexity is proven in section 1.1 and 1.2; the affine function $g_{3}(\vect{B}) = -\vect{x_i}^{T} \vect{\beta_{y_i + 1}}$ is proven to be convex in section 1.3.
+
+\medskip
+Now what is needed is a proof saying that the unweighted sum of convex functions is still convex. First by definition of $g_{1}$ the sum of two convex functions:
+\begin{align}
+g_{1}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) = g_{2}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) + g_{3}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right)
+\end{align}
+By definition of convexity of both $g_{2}$ and $g_{3}$:
+\begin{align}
+g_{2}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) &\leq \alpha g_{2}(\vect{B}_{1}) + (1 - \alpha)g_{2}(\vect{B}_{2}) \\
+g_{3}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) &\leq \alpha g_{3}(\vect{B}_{1}) + (1 - \alpha)g_{3}(\vect{B}_{2})
+\end{align}
+Now add up the above two inequalities, and given that $\forall \alpha \in (0, 1)$:
+\begin{align}
+g_{2}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) + g_{3}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) &\leq \alpha \left(g_{2}(\vect{B}_{1}) + g_{3}(\vect{B}_{1})\right) + (1 - \alpha)\left(g_{2}(\vect{B}_{2}) + g_{3}(\vect{B}_{2})\right) \\
+g_{1}\left(\alpha\vect{B}_{1} + (1-\alpha)\vect{B}_{2}\right) &\leq \alpha \left(g_{1}(\vect{B}_{1})\right) + (1 - \alpha)\left(g_{1}(\vect{B}_{2})\right)
+\end{align}
+The above inequality shows exactly the convexity of $g_{1}$, therefore the unweighted sum of convex functions is convex. Thus $g_{1}(\vect{B}) = g_{2}(\vect{B}) + g_{3}(\vect{B})$ is convex.
+
+
+\medskip
+Next we deal with the $h_{1}(\vect{B}) = \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{1}$ part. As the L1 norm $\norm{\vect{\beta_k}}{1}$ is proven to convex in section 1.4, and we have just shown from above that sum of convex functions is convex, therefore $h_{1}(\vect{B})$ being the sum of 10 L1 norms is convex.
+
+\medskip
+Similarly, $g(\vect{B}) = \sum\limits_{i = 1}^m g_{1}(\vect{B})$ is the sum of m convex functions $g_{1}(\vect{B})$, thus $g(\vect{B})$ is also convex.
+
+\medskip
+Now, this problem has been reduced into $\min\limits_{\vect{\beta_1}, \, \ldots, \, \vect{\beta_{10}}} \; g(\vect{B}) + h(\vect{B}) = \min\limits_{\vect{\beta_1}, \, \ldots, \, \vect{\beta_{10}}} \; g(\vect{B}) + \lambda h_{1}(\vect{B})$. For this is a positively weighted sum of convex functions $g(\vect{B})$ and $h_{1}(\vect{B})$, where $\lambda \in \R, \lambda > 0$, the proof of convexity follows the same procedure as the unweighted sum one, except for the adding of the convex definition inequality of $g(\vect{B})$ and $\lambda$ times the convex definition inequality of $h_{1}(\vect{B})$. Now as the weight $\lambda$ is a real-valued positive number, the sum of these inequalities still preserves the inequality, therefore the sum $g(\vect{B}) + h(\vect{B}) = g(\vect{B}) + \lambda h_{1}(\vect{B})$ is convex. And thus the whole problem is convex.
+
+\section{Part 2}
+\subsection{}
+\textit{Prove that $h(\vect{B}) = \lambda\sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{1}\notin{C^1}$.}
+
+\medskip
+The strategy of proof is decomposing the function into the smallest part which is a single absolute function and prove that it is not continuously differentiable
+
+\medskip
+The $\ell_1$ Regularisation $\norm{\vect{\beta_k}}{1}$ can be decomposed as the sum of the absoulte values of the $\beta_k$ recall the definition of L1 norm.
+\begin{equation}
+h(\vect{B}) = \lambda\sum\limits_{k = 1}^{10}\left(\vert\beta_{k1}\vert + \vert\beta_{k2}\vert + \cdots + \vert\beta_{kn}\vert\right)
+\end{equation}
+Let $f(\beta) = \vert\beta\vert$. Taking partial derivatives will end in adding up several derivatives of single absolute functions
+\begin{equation}
+\nabla h(\vect{B}) = \lambda\sum\limits_{k = 1}^{10}\left([f'(\beta_{k1})\quad f'(\beta_{k2})\quad \cdots\quad f'(\beta_{kn})]\right) 
+\end{equation}
+Now the question becomes proving whether the derivative of the absolute function $f'(\beta)$ is continuously differentiable. Using the basic definition of the derivative, it can be found that at the point $\beta = 0$, the derivative obtained from the left is different from the derivative obtained from the right. In other words, the function is not differentiable at the point $\beta = 0$:
+\begin{align}
+\mathop{lim}\limits_{0^-\ \rightarrow\ 0}\frac{[f(0 + \Delta\beta) - f(0)]}{\Delta\beta} &= \frac{[0 - \Delta\beta - 0]}{\Delta\beta} = \frac{-\Delta\beta}{\Delta\beta} = -1 \\
+\mathop{lim}\limits_{0^+\ \rightarrow\ 0}\frac{[f(0 + \Delta\beta) - f(0)]}{\Delta\beta} &= \frac{[0 + \Delta\beta - 0]}{\Delta\beta} = \frac{\Delta\beta}{\Delta\beta} = 1
+\end{align}
+Since some part of the function is not differentiable, clearly the original function $h(\vect{B})$ is not once continuously differentiable.
+
+\subsection{}
+\textit{Prove that the new optimisation problem(using $\ell_2$ regularisation instead) is convex and once continuously differentiable.}
+
+\medskip
+The strategy of proof is similar to section 1.5. This conclusion can be proved by decomposing the problem into sub-parts and using the Hessian matrix to prove the convexity when needed.
+
+\medskip
+The problem $\min\limits_{\vect{\beta_1}, \, \ldots, \, \vect{\beta_{10}}} \; f(\vect{B}) = \min\limits_{\vect{\beta_1}, \, \ldots, \, \vect{\beta_{10}}} \; \sum\limits_{i = 1}^m \left( \log \sum\limits_{k = 1}^{10} \exp \left( \vect{x_i}^{\top} \vect{\beta_k} \right) - \vect{x_i}^{\top} \vect{\beta_{y_i + 1}} \right) + \lambda \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{2}^{2}$ again can be broken up into the following two parts: (1) let $g(\vect{B}) = \left( \log \sum\limits_{k = 1}^{10} \exp \left( \vect{x_i}^{\top} \vect{\beta_k} \right) - \vect{x_i}^{\top} \vect{\beta_{y_i + 1}} \right)$; (2) let $h(\vect{B}) = \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{2}^{2}$.
+
+\medskip
+For the convexity part of the problem, recall some conclusions from section 1.5, the first part $g(\vect{B})$ is convex and the positively weighted sum of two convex functions is convex. Thus, the problem becomes proving the convexity of the second part$h(\vect{B})$.
+\begin{equation}
+h(\vect{B}) = \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{2}^{2} = \sum\limits_{k = 1}^{10} \left(\sqrt{\beta_{k1}^2 + \beta_{k2}^2 + \cdots + \beta_{kn}^2}\right)^{2} = \sum\limits_{k = 1}^{10} \sum\limits_{i=1}^{n} \beta_{ki}^2
+\end{equation}
+Let function $f_1(\vect{\beta}) = \sum\limits_{i=1}^{n} \beta_{i}^2$ and the function $h(\vect{B})$ now becomes $h(\vect{B}) = \sum\limits_{k = 1}^{10}f_1(\vect{\beta_k})$. The convexity of function $f_1(\vect{\beta})$ can be proved by calculating its Hessian matrix:
+\begin{equation}
+ H(\vect{\beta}) = \nabla^2f(\vect{\beta}) = \frac{\partial^2}{\partial \beta_{i}\beta_{j}}f_1(\vect{\beta}) = \frac{\partial}{\partial \beta_i}\frac{\partial\sum\limits_{i=1}^{n} \beta^2}{\partial \beta_i}
+\end{equation} 
+Where the indices of the Hessian matrix i, j $\in \{1, 2, \cdots, n\}$, and thus the Hessian matrix $H(\vect{\beta}) \in \R^{n \times n}$.
+
+\medskip
+For the case when $i = j$, the diagonal values of the Hessian matrix can be calculated as below:
+\begin{equation}
+H_{ii} = \frac{\partial}{\partial\beta_i}2\beta_i = 2
+\end{equation}
+For all the other normal cases when $i \neq j$, the values of the Hessian matrix are:
+\begin{equation}
+H_{ij}\frac{\partial}{\partial\beta_i}2\beta_j = 0
+\end{equation}
+Therefore, the whole Hessian matrix of the function $f_1(\vect{\beta})$ can be fully expanded as below:
+$$ H(\vect{\beta}) = 
+\begin{bmatrix} 
+2 & 0 & 0 & \cdots & 0 \\
+0 & 2 & 0 & \cdots & 0 \\
+\cdots & \cdots & \cdots & \cdots & \cdots \\
+0 & \cdots & 0 & 2 & 0 \\
+0 & \cdots & 0 & 0 & 2 \\
+\end{bmatrix}
+= 2\textbf{I}
+$$
+Clearly that the Hessian matrix is positive definite $\forall \beta_{ki} \in R$. Therefore the function $ f_1(\vect{\beta})$ is a convex function. It has been proven in section 1.5 that the unweighted sum of convex functions is convex. Applying this, the convexity of the second part function $h(\vect{B})$ can be proved. And thus the whole optimisation problem is convex.
+
+\medskip
+For the continuously differentiability part, the strategy is to prove that the two parts are both continuously differentiable. There is no doubt that the sum of two continuously differentiable functions is continuously differentiable as well according to the sum rule of the derivative.
+
+\medskip
+Firstly, we solve for the first part. From the giving information, the gradient of the function is given as:
+\begin{gather}
+\nabla_{\vect{B}} g(\vect{B}) = \vect{X}^{\top}(\vect{Z} \exp(\vect{X}\vect{B}) - \vect{Y}) \\
+\vect{Z}_{ii} = \frac{1}{\sum\limits_{k = 1}^{10}\exp(\vect{x_i}^{\top}\vect{\beta_k})}\  \forall i \in \{1, \cdots, m\}
+\end{gather}
+
+According to the definition, the function is continuously differentiable if and only if there exists a real value derivative for all feasible values of the variable. Therefore, we need to prove that this gradient function is meaningful for all possible values of $\vect{B}$. 
+
+\medskip
+Checking the existence of the gradient is divided into two steps. Step 1, checking the dimensions of the matrixes. $\vect{Z} \in \R^{m \times m}, \vect{X} \in \R^{m \times n}\  and\  \vect{B} \in \R^{n \times 10}$. Multiplying these three matrices will result in a dimension of $\R^{m \times 10}$ which matches the dimension of $\vect{Y}$. The dimension of $\vect{X}^{\top}$ matches the matrixes in the bracket as well and this will give a final dimension of $\R^{n \times 10}$ which fits the size of $\vect{B}$. Step 2, checking whether these matrixes exist. According to the given information, the matrix $\vect{X}, \vect{B}\  and\  \vect{Y}$ will always exist and will have real values. As for the matrix $\vect{Z}$, since the function on the denominator is exponential and is larger than 0, the matrix $\vect{Z}$ will always exist and have real values as well. In conclusion, the gradient of function $g(\vect{B})$ will always be meaningful and thus this function is once continuously differentiable.
+
+\medskip
+Secondly, we move on to the $\ell_2$ regularisation function $h(\vect{B})$. Taking the derivative of the function gives:
+\begin{gather}
+h(\vect{B}) = \sum\limits_{k = 1}^{10}\left(\sqrt{\beta_{k1}^2 + \beta_{k2}^2 + \cdots + \beta_{kn}^2}\right)^2 = \sum\limits_{k = 1}^{10}\vect{\beta_k}^{\top}\vect{\beta_k} \\
+\nabla_{\vect{B}} h(\vect{B}) = 2\sum\limits_{k = 1}^{10}\vect{\beta_k}^{\top}
+\end{gather}
+Considering that the vector $\vect{\beta_k}$ always exists, the gradient will then be meaningful for all the feasible values of $\vect{B}$
+
+\medskip
+Finally, as stated above, the derivative of a complex function is equal to the sum of the derivatives of each individual part of the function according to the sum rule of the derivative. Since the general optimisation problem is the weighted sum of two parts, its derivative will simply be the weighted sum of the individual derivatives. Thus, the optimisation problem will be once continuously differentiable. In other words, $f(\vect{B}) \in C^1$
+\subsection{}
+\textit{Show the three fixed lines of the code.}
+
+\medskip
+%line 79: convgsd(i) = norm(beta_grad);
+%line 84: lenXsd(i)  = norm(beta_guess_iter(i+1,:) -  beta_guess_iter(i,:));
+%line 89: diffFsd(i) = abs(fcn_val_iter(i+1)-fcn_val_iter(i));
+line 79: convgsd(i) = norm(beta\_grad);\newline
+line 84: lenXsd(i)  = norm(beta\_guess\_iter(i+1,:) -  beta\_guess\_iter(i,:));\newline
+line 89: diffFsd(i) = abs(fcn\_val\_iter(i+1) - fcn\_val\_iter(i));
+
+\medskip
+\medskip
+
+\subsection{}
+\textit{How do the tolerances in Part 2.3 correspond to the FONC, SONC, and SOSC? Show how each of Lines 79, 84, \& 89 in SolveMNIST\_Gradient now correspond to an optimality condition and state the relevant condition.}
+
+\subsubsection{2.4.1}
+The first tolerance check $\norm{\nabla f(\vect{B}^{(j)})}{2} < \epsilon$ corresponds to the optimality condition of FONC. Here is the proof.
+
+As the termination tolerance is set $\epsilon = 1 \times 10^{-4}$ which is a number very close to 0. And the tolerance check $\norm{\nabla f(\vect{B}^{(j)})}{2} < \epsilon$ essentially tries to terminate the program when a point $\vect{B}^{*}$ is reached such that the $\norm{\nabla f(\vect{B}^{*})}{2}$ is sufficiently close to 0. Thus the intention of the first check can be formulated as:
+\begin{align}
+\norm{\nabla f(\vect{B}^{*})}{2} &= 0
+\end{align}
+Assuming the Jacobian of $\vect{B}$ collapses into a vector so that only vector norms are under consideration here, and by definition of vector L2-norm:
+\begin{align}
+\sqrt{\sum\limits_{i = 1}^{n}\left(\frac{
+\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{i}}\right)^{2}} &= 0 \\
+\sum\limits_{i = 1}^{n}\left(\frac{
+\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{i}}\right)^{2} &= 0 \\
+\left(\frac{
+\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{1}}\right)^{2} + \left(\frac{
+\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{2}}\right)^{2} + \cdots &+
+\left(\frac{
+\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{n}}\right)^{2} = 0
+\end{align}
+As each of the element $\left(\frac{\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{i}}\right)^{2} \geq 0$:
+\begin{align}
+\left(\frac{\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{1}}\right)^{2} = \left(\frac{\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{2}}\right)^{2} &= \cdots = \left(\frac{\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{n}}\right)^{2} = 0 \\
+\left(\frac{\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{1}}\right) = \left(\frac{\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{2}}\right) &= \cdots = \left(\frac{\partial f\left(\vect{B}^{*}\right)}{\partial \vect{B}_{n}}\right) = 0
+\end{align}
+With each element of the Jacobian being 0, therefore:
+\begin{align}
+\nabla_{\vect{B}} f(\vect{B}^{*}) &= 0
+\end{align}
+
+\medskip
+Now from the above equation we have $\vect{d}^{T}\nabla f(\vect{B}^{*}) = 0$ at the local minimiser $\vect{B}^{*}$, for any direction vector $\vect{d}$. This is exactly the definition of FONC, thus the first tolerance check is indeed effectively the FONC.
+
+\subsubsection{2.4.2}
+Since the first tolerance check corresponds to the FONC, we assume that the second tolerance check $\norm{\vect{B}^{(j+1)}-\vect{B}^{(j)}}{2} < \epsilon$ corresponds to the SONC or SOSC. In order to prove this, it is necessary to check whether the Hessian matrix is positive definite. 
+
+\medskip
+Once again, we break the optimisation problem $f(\vect{B})$ into two parts:(1) let $g(\vect{B}) = \left( \log \sum\limits_{k = 1}^{10} \exp \left( \vect{x_i}^{\top} \vect{\beta_k} \right) - \vect{x_i}^{\top} \vect{\beta_{y_i + 1}} \right)$; (2) let $h(\vect{B}) = \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{2}^{2}$.
+
+\medskip
+The gradient of function $g(\vect{B})$ is given as function 2.9 above. Using a slight different approach from pervious section, the gradient of the function $h(\vect{B})$ in a format of matrix can be obtained:
+\begin{gather}
+h(\vect{B}) = \sum\limits_{k = 1}^{10} \norm{\vect{\beta_k}}{2}^{2} = \sum\limits_{k = 1}^{10} \left(\sqrt{\vect{\beta^{\top}\beta}}\right)^{2} = \sum\limits_{k = 1}^{10} \vect{\beta^{\top}\beta} = \vect{B^{\top}B} \\
+\nabla_{\vect{B}} h(\vect{B}) = \frac{\partial\vect{B^{\top}B}}{\partial\vect{B}} = 2\vect{B}
+\end{gather}
+The Hessian matrix for the can be calculated by taking the partial derivative of the gradient function:
+\begin{equation}
+\nabla_{\vect{B}}^{2} f(\vect{B})=  \nabla_{\vect{B}}^{2} g(\vect{B}) + \nabla_{\vect{B}}^{2} h(\vect{B}) = \frac{\partial\vect{X}^{\top}(\vect{Z} \exp(\vect{X}\vect{B}) - \vect{Y})}{\partial\vect{B}} + \frac{\partial 2\vect{B}}{\partial\vect{B}}
+\end{equation}
+Now that the equation for the Hessian matrix is derived, it is necessary to find the relationship between the tolerance check and the Hessian matrix. As the tolerance is small, similar to section 2.4.1, the intention of the second check can also be formulated as:
+\begin{equation}
+\norm{\vect{B}^{(j+1)}-\vect{B}^{(j)}}{2} = \norm{\Delta\vect{B}}{2} = 0
+\end{equation}
+Following a similar procedure as the section 2.4.1, it can be proven that $\Delta\vect{B} = 0$. From the code and the giving information, the weight matrix $\vect{B}$ is trained using a gradient-based method. Thus the difference of the weight matrix between each training epoch can be generalised as below:
+\begin{gather}
+\vect{B^{(j+1)}} = \vect{B^{(j)}} - k_t \nabla f(\vect{B}) \\
+\Delta\vect{B} = -k_t \nabla f(\vect{B})
+\end{gather}
+where $k_t$ is user-defined learning rate. Combining the equation 2.23 and 2.25, it can be found that the second tolerance check will eventually lead to the same result, that is the gradient of the loss function becomes zero.
+
+\medskip
+Combining all of the discussions above, it is found that the second tolerance check results in the same optimality condition. The second tolerance check is FONC as well.
+
+\subsubsection{2.4.3}
+Finally, it comes to the third tolerance check $|f(\vect{B^{(j+1)}}) - f(\vect{B^{(j)}}) < \epsilon|$. Since the Hessian matrix has already be calculated in section 2.4.2, we only need to find the relationship between the tolerance check and the optimality conditions.
+
+\medskip
+The range of the difference of the loss when the terminate state reaches can be simply derived by removing the absolute function in the third check:
+\begin{equation}
+-\epsilon < f(\vect{B^{(j+1)}}) - f(\vect{B^{(j)}}) < \epsilon
+\end{equation}
+Considering that the termination tolerance is set very close to 0, the intention of the third check can be then formulated as:
+\begin{equation}
+f(\vect{B^{(j+1)}}) - f(\vect{B^{(j)}}) = 0
+\end{equation}
+Let $\Delta\vect{B} = \vect{B^{(j+1)}}) - f(\vect{B^{(j)}}$, from the definition of the derivative:
+\begin{equation}
+\frac{df(\vect{B})}{d\vect{B}} = \mathop{lim}\limits_{\Delta\vect{B}\  \rightarrow\ 0} \frac{f(\vect{B^{(j+1)}}) - f(\vect{B^{(j)}})}{\Delta\vect{B}}
+\end{equation}
+It is clear that when the numerator $f(\vect{B}^{(j+1)}) - f(\vect{B}^{(j)})$ is zero, all the partial derivative values in the Jacobian will be zero, and thus $\nabla f(\vect{B}) = 0$. Now let $\vect{B}^{j}$ be the local minimiser such that $ \vect{d}^{T}\nabla f(\vect{B}^{(j)}) = 0$, and $\vect{B}^{j+1} = \vect{B}^{j} + \alpha \vect{d}$. Use Taylor theorem to expand $f(\vect{B}^{j+1})$ as:
+\begin{align}
+f(\vect{B}^{j+1}) &= f(\vect{B}^{j}) + \alpha \nabla \vect{d}^{T}f(\vect{B}^{j}) + \frac{1}{2} (\alpha)^{2} \vect{d}^{T} \nabla^{2} f(\vect{B}^{j}) \vect{d} \\
+f(\vect{B}^{j+1}) &= f(\vect{B}^{j}) + \frac{1}{2} (\alpha)^{2} \vect{d}^{T} \nabla^{2} f(\vect{B}^{j}) \vect{d} \\
+f(\vect{B}^{j+1}) - f(\vect{B}^{j}) &= \frac{1}{2} (\alpha)^{2} \vect{d}^{T} \nabla^{2} f(\vect{B}^{j}) \vect{d}
+\end{align}
+By the above equation and from the given tolerance check $|f(\vect{B^{(j+1)}}) - f(\vect{B^{(j)}}) < \epsilon|$, where $\epsilon$ is very close to 0, one can obtain the relation of $|\frac{1}{2} (\alpha)^{2} \vect{d}^{T} \nabla^{2} f(\vect{B}^{j}) \vect{d}| = 0$, therefore $\vect{d}^{T} \nabla^{2} f(\vect{B}^{j}) \vect{d} = 0$. And thus the SONC is proved.
+
+\medskip
+From all of the discussions above, a conclusion can be drawn that the third tolerance check corresponds to the SONC.  
+\end{document}
