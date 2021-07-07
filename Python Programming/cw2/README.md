@@ -2,6 +2,5 @@
 
 ### Introduction
 
-This repository contains the skeleton code that you need 
-in order to complete the coursework.
+The source codes for tube recommendation is located under `tubemap` and `review` for movie review classifcation.
 
