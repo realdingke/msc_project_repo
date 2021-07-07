@@ -1,2 +1,2 @@
-# msc_project_repo
-This repository stores the projects and practice during my msc period
+# MSC project repository
+This repository stores the projects and practices during my msc period.
