@@ -2,5 +2,5 @@
 
 ### Introduction
 
-The source codes for tube recommendation is located under `tubemap` and `review` for movie review classifcation.
+The source codes for tube planning is located under `tubemap` and `review` for movie review classifcation.
 
