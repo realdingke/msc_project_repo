@@ -1,0 +1,23 @@
+74809.11728030888 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+70707.53461483617 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+69054.17365372479 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+67602.41802566817 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [512, 512, 128], 'patience': 8}
+67450.84729685099 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [512, 512, 512], 'patience': 8}
+68283.71472327063 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [512, 512, 512], 'patience': 8}
+
+72216.78627883608 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+71089.30865682238 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+70569.37561377745 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+67185.54909317798 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [512, 512, 128], 'patience': 8}
+
+77505.5351194242 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+70401.4509834831 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+68852.36173465093 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+67442.69658842152 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [512, 512, 128], 'patience': 8}
+68560.14441647957 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [512, 512, 512], 'patience': 8}
+
+70377.36995879808 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+68720.56562439147 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+70162.9133779589 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+66954.36107330862 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [512, 512, 128], 'patience': 8}
+67502.68350989811 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [512, 512, 512], 'patience': 8}

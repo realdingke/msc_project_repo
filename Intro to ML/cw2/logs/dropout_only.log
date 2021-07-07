@@ -1,0 +1,50 @@
+71605.97068454193 {'activations': [Sigmoid()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [13]}
+71451.78778838785 {'activations': [Sigmoid()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [24]}
+71515.86595354156 {'activations': [Sigmoid()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [32]}
+71605.97068454193 {'activations': [Sigmoid()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [13]}
+71451.78778838785 {'activations': [Sigmoid()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [24]}
+71515.86595354156 {'activations': [Sigmoid()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [32]}
+82143.99747861529 {'activations': [ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [13]}
+95341.34905794103 {'activations': [ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [24]}
+84551.36300326326 {'activations': [ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [32]}
+82143.99747861529 {'activations': [ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [13]}
+95341.34905794103 {'activations': [ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [24]}
+84551.36300326326 {'activations': [ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [32]}
+83186.41473786169 {'activations': [Tanh()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [13]}
+88286.07859883615 {'activations': [Tanh()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [24]}
+93010.99599700545 {'activations': [Tanh()], 'dropout': False, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [32]}
+83186.41473786169 {'activations': [Tanh()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [13]}
+88286.07859883615 {'activations': [Tanh()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [24]}
+93010.99599700545 {'activations': [Tanh()], 'dropout': True, 'early_stopping': False, 'n_hidden': 1, 'n_nodes': [32]}
+70645.24697688858 {'activations': [Sigmoid(), Sigmoid()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [13, 13]}
+70803.22574728495 {'activations': [Sigmoid(), Sigmoid()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [20, 20]}
+71223.15526170359 {'activations': [Sigmoid(), Sigmoid()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 32]}
+70969.4645420684 {'activations': [Sigmoid(), Sigmoid()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 64]}
+77488.0530921011 {'activations': [Sigmoid(), Sigmoid()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [13, 13]}
+76140.77009932575 {'activations': [Sigmoid(), Sigmoid()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [20, 20]}
+74908.09342508881 {'activations': [Sigmoid(), Sigmoid()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 32]}
+74333.30796575898 {'activations': [Sigmoid(), Sigmoid()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 64]}
+89997.39512068438 {'activations': [ReLU(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [13, 13]}
+86547.04175094319 {'activations': [ReLU(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [20, 20]}
+94093.85242730031 {'activations': [ReLU(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 32]}
+84962.03164255363 {'activations': [ReLU(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 64]}
+84617.66408778202 {'activations': [ReLU(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [13, 13]}
+84379.28105247772 {'activations': [ReLU(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [20, 20]}
+89260.13476902003 {'activations': [ReLU(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 32]}
+83403.0988905201 {'activations': [ReLU(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 64]}
+92588.95472117292 {'activations': [Tanh(), Tanh()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [13, 13]}
+90603.04793837215 {'activations': [Tanh(), Tanh()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [20, 20]}
+94801.50444418531 {'activations': [Tanh(), Tanh()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 32]}
+87692.91709029011 {'activations': [Tanh(), Tanh()], 'dropout': False, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 64]}
+89704.16038373944 {'activations': [Tanh(), Tanh()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [13, 13]}
+88634.12435001075 {'activations': [Tanh(), Tanh()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [20, 20]}
+92664.54505846396 {'activations': [Tanh(), Tanh()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 32]}
+90252.47322469355 {'activations': [Tanh(), Tanh()], 'dropout': True, 'early_stopping': False, 'n_hidden': 2, 'n_nodes': [24, 64]}
+86406.92274697898 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13]}
+89911.3704874505 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32]}
+81341.8714155066 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64]}
+82859.01060140923 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [512, 512, 128]}
+75883.49679224787 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13]}
+72822.52272510368 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32]}
+71159.91172673854 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64]}
+70143.60348310307 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'early_stopping': False, 'n_hidden': 3, 'n_nodes': [512, 512, 128]}

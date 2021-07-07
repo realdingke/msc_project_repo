@@ -1,0 +1,41 @@
+{'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid()], 'n_hidden': 5, 'n_nodes': 24}
+Regressor(activations=[Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid()],
+          n_hidden=5, n_nodes=24,
+          optimiser=Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.01
+    weight_decay: 0.0001
+))
+71336.88437187174 {'activations': [Sigmoid()], 'n_hidden': 1, 'n_nodes': 13}
+71869.1585476144 {'activations': [Sigmoid()], 'n_hidden': 1, 'n_nodes': 20}
+71288.43521961173 {'activations': [Sigmoid()], 'n_hidden': 1, 'n_nodes': 32}
+71511.20058425685 {'activations': [Sigmoid()], 'n_hidden': 1, 'n_nodes': 64}
+70410.22744675087 {'activations': [Sigmoid(), Tanh()], 'n_hidden': 2, 'n_nodes': 13}
+70652.57845488291 {'activations': [Sigmoid(), Tanh()], 'n_hidden': 2, 'n_nodes': 20}
+71006.62563556588 {'activations': [Sigmoid(), Tanh()], 'n_hidden': 2, 'n_nodes': 32}
+71084.15863609663 {'activations': [Sigmoid(), Tanh()], 'n_hidden': 2, 'n_nodes': 64}
+74066.84686416696 {'activations': [Sigmoid(), Tanh(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 13}
+70660.0304269572 {'activations': [Sigmoid(), Tanh(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 20}
+70829.02147779186 {'activations': [Sigmoid(), Tanh(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 32}
+71139.22099236173 {'activations': [Sigmoid(), Tanh(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 64}
+72121.6979984981 {'activations': [Sigmoid(), Tanh(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 128}
+71964.50192246644 {'activations': [Sigmoid(), ReLU(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 13}
+72088.19103274486 {'activations': [Sigmoid(), ReLU(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 20}
+70587.71683340095 {'activations': [Sigmoid(), ReLU(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 32}
+72910.0621260042 {'activations': [Sigmoid(), ReLU(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 64}
+73277.89353990779 {'activations': [Sigmoid(), ReLU(), Sigmoid()], 'n_hidden': 3, 'n_nodes': 128}
+70765.72485375556 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 13}
+69795.8162702982 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 24}
+70090.51052522818 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 32}
+70888.10065471868 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid()], 'n_hidden': 5, 'n_nodes': 13}
+69435.25120048727 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid()], 'n_hidden': 5, 'n_nodes': 24}
+73768.76056533305 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid()], 'n_hidden': 5, 'n_nodes': 32}
+115686.76790061877 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Tanh(), Sigmoid()], 'n_hidden': 6, 'n_nodes': 13}
+101499.29132181683 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Tanh(), Sigmoid()], 'n_hidden': 6, 'n_nodes': 24}
+115686.76918406208 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Tanh(), Sigmoid()], 'n_hidden': 6, 'n_nodes': 32}
+115686.76768553116 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid(), Sigmoid()], 'n_hidden': 6, 'n_nodes': 13}
+115686.7677794676 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid(), Sigmoid()], 'n_hidden': 6, 'n_nodes': 24}
+115686.76764907794 {'activations': [Sigmoid(), Tanh(), ReLU(), ReLU(), Sigmoid(), Sigmoid()], 'n_hidden': 6, 'n_nodes': 32}

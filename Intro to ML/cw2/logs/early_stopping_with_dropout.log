@@ -1,0 +1,119 @@
+71142.66041750682 {'activations': [Sigmoid()], 'n_hidden': 1, 'n_nodes': [13]}
+71383.87732649336 {'activations': [Sigmoid()], 'n_hidden': 1, 'n_nodes': [24]}
+71319.33338901264 {'activations': [Sigmoid()], 'n_hidden': 1, 'n_nodes': [32]}
+71012.69040128344 {'activations': [ReLU()], 'n_hidden': 1, 'n_nodes': [13]}
+71324.046027133 {'activations': [ReLU()], 'n_hidden': 1, 'n_nodes': [24]}
+70714.61910361769 {'activations': [ReLU()], 'n_hidden': 1, 'n_nodes': [32]}
+71684.81089699411 {'activations': [Tanh()], 'n_hidden': 1, 'n_nodes': [13]}
+72162.86866261497 {'activations': [Tanh()], 'n_hidden': 1, 'n_nodes': [24]}
+71605.98800568361 {'activations': [Tanh()], 'n_hidden': 1, 'n_nodes': [32]}
+70472.22157936655 {'activations': [Sigmoid(), Sigmoid()], 'n_hidden': 2, 'n_nodes': [13, 13]}
+70771.02869624745 {'activations': [Sigmoid(), Sigmoid()], 'n_hidden': 2, 'n_nodes': [20, 20]}
+70917.26092980114 {'activations': [Sigmoid(), Sigmoid()], 'n_hidden': 2, 'n_nodes': [24, 32]}
+70920.73751857657 {'activations': [Sigmoid(), Sigmoid()], 'n_hidden': 2, 'n_nodes': [24, 64]}
+70177.79412104776 {'activations': [ReLU(), ReLU()], 'n_hidden': 2, 'n_nodes': [13, 13]}
+70823.65032557682 {'activations': [ReLU(), ReLU()], 'n_hidden': 2, 'n_nodes': [20, 20]}
+70438.74187481248 {'activations': [ReLU(), ReLU()], 'n_hidden': 2, 'n_nodes': [24, 32]}
+70365.47265357782 {'activations': [ReLU(), ReLU()], 'n_hidden': 2, 'n_nodes': [24, 64]}
+71068.38449931945 {'activations': [Tanh(), Tanh()], 'n_hidden': 2, 'n_nodes': [13, 13]}
+71406.63966870574 {'activations': [Tanh(), Tanh()], 'n_hidden': 2, 'n_nodes': [20, 20]}
+71390.7766488352 {'activations': [Tanh(), Tanh()], 'n_hidden': 2, 'n_nodes': [24, 32]}
+71590.3490498763 {'activations': [Tanh(), Tanh()], 'n_hidden': 2, 'n_nodes': [24, 64]}
+115657.78086819616 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+115657.78086819616 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+115657.78086819616 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+115657.78086819616 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+76208.9202501806 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+75060.5907634087 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+75060.5907634087 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+75060.5907634087 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+75465.72029689775 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+74412.71275834776 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+74405.1459398751 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+74149.82797997071 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+69605.91596577135 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+69586.19849511524 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+69586.19849511524 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+69586.19849511524 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+70620.51971162624 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+70595.43434753116 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+70528.31221724905 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+70528.31221724905 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+72306.99174896046 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+72306.99174896046 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+72290.50673740295 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+72233.83808212396 {'activations': [Sigmoid(), Sigmoid(), Sigmoid()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+115682.96140253845 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+115682.96140253845 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+115682.96140253845 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+115682.96140253845 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+115584.78037951369 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+115584.78037951369 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+115584.78037951369 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+115584.78037951369 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+115689.60004734414 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+115689.60004734414 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+115689.60004734414 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+115554.70215195465 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+71235.36037359167 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+70417.45166726748 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+69879.18273797871 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+69879.18273797871 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+72910.9462618831 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+72619.14644356213 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+71254.45860468218 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+70942.42315164802 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+76115.02606492549 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+73351.63504900328 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+72774.93522816052 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+72529.40636802914 {'activations': [Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+74809.11728030888 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+74809.11728030888 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+74809.11728030888 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+74809.11728030888 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+70707.53461483617 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+70707.53461483617 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+70707.53461483617 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+70707.53461483617 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+69041.94800600114 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+69076.0607977028 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+69054.17365372479 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+69054.17365372479 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+71481.92420933249 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+71481.92420933249 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+71481.92420933249 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+72216.78627883608 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+71089.30865682238 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+71089.30865682238 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+71089.30865682238 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+71089.30865682238 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+69379.17513822566 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+69379.17513822566 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+70569.37561377745 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+70569.37561377745 {'activations': [ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+77502.92495959673 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+77493.4254462384 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+77493.4254462384 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+77505.5351194242 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+70513.17296746702 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+70513.17296746702 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+70497.58989844812 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+70401.4509834831 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+68794.63581754344 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+68852.36173465093 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+68852.36173465093 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+68852.36173465093 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+70406.93032811479 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 1}
+70377.36995879808 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 3}
+70377.36995879808 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 5}
+70377.36995879808 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [13, 13, 13], 'patience': 8}
+68720.56562439147 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 1}
+68720.56562439147 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 3}
+68720.56562439147 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 5}
+68720.56562439147 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [32, 64, 32], 'patience': 8}
+69423.44315626357 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 1}
+69423.44315626357 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 3}
+70162.9133779589 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 5}
+70162.9133779589 {'activations': [ReLU(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 3, 'n_nodes': [64, 128, 64], 'patience': 8}
+77922.44310509805 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': [32, 64, 64, 32]}
+70267.0812592958 {'activations': [ReLU(), ReLU(), ReLU(), ReLU()], 'n_hidden': 4, 'n_nodes': [32, 64, 64, 32]}

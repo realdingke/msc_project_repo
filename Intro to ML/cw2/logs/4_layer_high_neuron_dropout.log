@@ -1,0 +1,21 @@
+71128.88388153534 {'activations': [ReLU(), ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 4, 'n_nodes': [64, 128, 128, 64], 'patience': 8}
+68183.42023671852 {'activations': [ReLU(), ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 4, 'n_nodes': [128, 512, 512, 128], 'patience': 8}
+68873.83998764673 {'activations': [ReLU(), ReLU(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 4, 'n_nodes': [256, 512, 512, 256], 'patience': 8}
+
+69251.34725408412 {'activations': [ReLU(), ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 4, 'n_nodes': [64, 128, 128, 64], 'patience': 8}
+67132.38879770337 {'activations': [ReLU(), ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 4, 'n_nodes': [128, 512, 512, 128], 'patience': 8}
+67533.48380308144 {'activations': [ReLU(), ReLU(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 4, 'n_nodes': [256, 512, 512, 256], 'patience': 8}
+
+
+72114.94604047685 {'activations': [ReLU(), Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 4, 'n_nodes': [64, 128, 128, 64], 'patience': 8}
+84121.17985584191 {'activations': [ReLU(), Sigmoid(), ReLU(), ReLU()], 'dropout': True, 'n_hidden': 4, 'n_nodes': [128, 512, 512, 128], 'patience': 8}
+
+68758.46236442508 {'activations': [ReLU(), Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 4, 'n_nodes': [64, 128, 128, 64], 'patience': 8}
+68207.3244989263 {'activations': [ReLU(), Sigmoid(), ReLU(), ReLU()], 'dropout': False, 'n_hidden': 4, 'n_nodes': [128, 512, 512, 128], 'patience': 8}
+
+69699.15151549515 {'activations': [ReLU(), Sigmoid(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 4, 'n_nodes': [64, 128, 128, 64], 'patience': 8}
+69026.54240283699 {'activations': [ReLU(), Sigmoid(), Sigmoid(), ReLU()], 'dropout': True, 'n_hidden': 4, 'n_nodes': [128, 512, 512, 128], 'patience': 8}
+
+68261.47455155598 {'activations': [ReLU(), Sigmoid(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 4, 'n_nodes': [64, 128, 128, 64], 'patience': 8}
+69417.07184211844 {'activations': [ReLU(), Sigmoid(), Sigmoid(), ReLU()], 'dropout': False, 'n_hidden': 4, 'n_nodes': [128, 512, 512, 128], 'patience': 8}
+

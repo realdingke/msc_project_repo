@@ -1,0 +1,6 @@
+77294.44390334291 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 13}
+74861.35850498444 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 24}
+71555.92864414252 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 32}
+73725.44568114071 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 64}
+76701.95417937689 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 128}
+115695.6502685593 {'activations': [Sigmoid(), Tanh(), ReLU(), Sigmoid()], 'n_hidden': 4, 'n_nodes': 512}
